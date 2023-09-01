@@ -5,6 +5,15 @@ from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
     path('login',jwt_views.TokenObtainPairView.as_view(),name='login'),
+    # API for corpusGUI
+    path('udops/create_corpus/', views.create_corpus.as_view()),
+    path('udops/add/', views.add.as_view()),
+    path('udops/remote/', views.remote.as_view()),
+    path('udops/commit/', views.commit.as_view()),
+    path('udops/push/', views.push.as_view()),
+    path('udops/clone/', views.clone.as_view()),
+    path('udops/pull/', views.pull.as_view()),
+    # corpus API
     path('udops/corpus/count/', views.get_udops_count.as_view()),
     path('udops/corpus/summary/',views.summary.as_view()),
     path('udops/corpus/list/',views.get_corpus_list.as_view()),
